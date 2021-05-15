@@ -1,0 +1,44 @@
+@use 'normalize';
+@use 'box';
+@use 'breakpoints';
+@use 'colors';
+@use 'container';
+@use 'cards';
+
+@forward 'normalize';
+@forward 'box';
+@forward 'breakpoints';
+@forward 'colors';
+@forward 'container';
+@forward 'cards';
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap");
+
+:root {
+  --font: "Roboto", sans-serif;
+  --navbar-font: "Fira Sans", sans-serif;
+  --navbar-height: 55px;
+
+  &[data-theme="light"] {
+    --navbar-bg: var(--white);
+    --navbar-link-color: rgb(45, 70, 101);
+    --footer: var(--white);
+    --body: var(--white);
+    --font-color: var(--black);
+  }
+
+  &[data-theme="dark"] {
+    --navbar-bg: rgb(22, 27, 34);
+    --navbar-link-color: rgb(201, 209, 217);
+    --footer:  rgb(22, 27, 34);
+    --body: #090C10;
+    --font-color: rgb(201, 209, 217);
+  }
+}
+
+body {
+  font-family: var(--font);
+  background-color: var(--body);
+  color: var(--font-color);
+}
